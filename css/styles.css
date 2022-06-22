@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap'); 
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  overflow: hidden;
+  margin: 0;
+  background-color: rgb(101, 81, 158);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+display: flex;
+width: 100%;
+padding: 0 15px;
+}
+
+.slide {
+  color: darkmagenta;
+  font-family: Orbitron;
+  flex: 1;
+  height: 80vh;
+  border-radius: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: all 500ms ease-in-out;/* 1- то что меняем, 2 - время анимации, 3- вид анимации, 4 - задержка */
+}
+
+.slide:hover {
+  flex:2;
+  border: 3px solid white;
+}
+
+.slide h3 {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.slide.active {
+  flex: 10;
+}
+
+.slide.active h3 {
+  text-shadow: 1px 0 1px white, /* тень за текстом */
+  0 1px 1px white, 
+  -1px 0 1px white, 
+  0 -1px 1px white,
+  -1px 0 1px white;
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;  /* 1- то что меняем, 2 - время анимации, 3- вид анимации, 4 - задержка */
+}
